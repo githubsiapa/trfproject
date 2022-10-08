@@ -1,0 +1,50 @@
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoibmR1dCIsImlhdCI6MTY2Mjk3MTM0NCwiZXhwIjoxNjYyOTcxMzU5fQ.Ki0rGd_CKlpI1PHPaNqgkXyEzA_WTcDF1ZttkgfvxxI
+
+###
+GET http://localhost:5000/simcard
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoibmR1dCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NDk0MTEzMywiZXhwIjoxNjY0OTQxMTQ4fQ.RD5kpgEkvtkROq5_HY0qGNkOIo2cyv-J1lOFNDoW04w
+
+###
+POST  http://localhost:5000/simcard/up/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoibmR1dCIsImlhdCI6MTY2MzkxNDM1NiwiZXhwIjoxNjYzOTE0MzcxfQ.bZtSYCkyG6aay0sUEd7LshKoXc_cy5aYstjpe8QNbrQ
+
+{
+    "tgl_masa_aktif" : "22-09-2022",
+    "nomer_label" : "TRI 01",
+    "nomer" : "081111111111",
+    "pass" : "ndut123",
+    "nik" : "123415",
+    "data" : "PP 1JAN22",
+    "label" : ""
+}
+
+###
+DELETE  http://localhost:5000/simcard/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoibmR1dCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NDk0MTEwOSwiZXhwIjoxNjY0OTQxMTI0fQ.H71_qndEFQe9pJyB_DhV79nS0WPrlp3K47sx8jKjYU0
+
+###
+POST  http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "username" : "ndut",
+    "password" : "123456",
+    "confpassword" : "123456"
+}
+
+###
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username" : "ndut",
+    "password" : "123456"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+delete http://localhost:5000/logout

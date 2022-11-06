@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://149.129.252.217:5000/token");
       setToken(response.data.accessToken);
       const decode = jwt_decode(response.data.accessToken);
       setUsername(decode.username);
@@ -39,7 +39,7 @@ const Dashboard = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get("http://localhost:5000/token");
+        const response = await axios.get("http://149.129.252.217:5000/token");
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decode = jwt_decode(response.data.accessToken);

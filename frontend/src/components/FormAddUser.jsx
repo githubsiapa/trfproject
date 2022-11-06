@@ -20,7 +20,7 @@ const FormAddUser = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get("http://localhost:5000/token");
+        const response = await axios.get("http://149.129.252.217:5000/token");
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decode = jwt_decode(response.data.accessToken);
@@ -37,7 +37,7 @@ const FormAddUser = () => {
   const saveUser = async (e) => {
     e.preventDefault();
     try {
-      await axiosJWT.post("http://localhost:5000/users", {
+      await axiosJWT.post("http://149.129.252.217:5000/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

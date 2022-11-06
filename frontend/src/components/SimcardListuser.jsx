@@ -21,7 +21,7 @@ const SimcardListuser = () => {
 
   const getSimcard = async () => {
     setLoading(true);
-    const response = await axiosJWT.get("http://localhost:5000/simcard", {
+    const response = await axiosJWT.get("http://149.129.252.217:5000/simcard", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -32,7 +32,7 @@ const SimcardListuser = () => {
   };
 
   const deleteSimcard = async (id) => {
-    await axiosJWT.delete(`http://localhost:5000/simcard/del/${id}`, {
+    await axiosJWT.delete(`http://149.129.252.217:5000/simcard/del/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -46,7 +46,7 @@ const SimcardListuser = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get("http://localhost:5000/token");
+        const response = await axios.get("http://149.129.252.217:5000/token");
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decode = jwt_decode(response.data.accessToken);

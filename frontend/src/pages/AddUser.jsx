@@ -18,7 +18,7 @@ const AddUser = () => {
   }, []);
   const refreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://149.129.252.217:5000/token");
       setToken(response.data.accessToken);
       const decode = jwt_decode(response.data.accessToken);
       setUsername(decode.username);

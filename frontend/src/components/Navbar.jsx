@@ -6,7 +6,7 @@ import axios from "axios";
 const Navbar = () => {
   const navigate = useNavigate();
   const logout = async () => {
-    const response = await axios.delete("http://localhost:5000/logout");
+    const response = await axios.delete("http://149.129.252.217:5000/logout");
     navigate("/", { replace: false });
   };
 
